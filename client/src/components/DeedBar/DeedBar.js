@@ -11,7 +11,7 @@ class DeedBar extends Component {
     componentDidMount() {
         console.log('doing thing');
         fetch('/api/mongodb/santas_test/')
-          .then(response => response.json())
+          .then(response => response.text())
           .then(data => {
             console.log('Got data back', data);
             this.setState({
