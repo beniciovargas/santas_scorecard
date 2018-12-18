@@ -60,7 +60,7 @@ class Profile extends Component {
             <div className="deeds">
                 <div className="card">
                     <div className="form-container">
-                        <h4>Let's add a new deed!</h4>
+                        <h4>Was it is Naughty or was it Nice? Enter deed below:</h4>
 
                         <textarea
                             name="deedContents"
@@ -84,7 +84,7 @@ class Profile extends Component {
 
             <div className="row3">
                 <div className="card">
-                    <div className="deed-list">
+                    <div className="deedList">
                        
                     </div>
                 </div>

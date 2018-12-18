@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import UserSignup from './components/pages/UserSignup/UserSignup.js';
 import Profile from './components/pages/Profile/Profile.js';
@@ -8,8 +8,8 @@ import Profile from './components/pages/Profile/Profile.js';
 
 class App extends Component {
 //METHODS NEEDED:
-// createBars
-// refreshBars
+// createBars- this is populated by the refresh bars method
+// refreshBars- got the method already done for this
 // newDeeds 
 // get deeds and add them to bottom bar
 // checkbox values (either good or bad) - determines which bar
