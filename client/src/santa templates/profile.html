@@ -1,0 +1,93 @@
+
+<!doctype html>
+<html>
+  <head>
+    <title>Santa's Scorecard</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/toggle.css" />
+  </head>
+    
+  <body background="images/wallpaper66.jpg">   
+    <div class="container1">
+         
+      <div class="row1">
+        <div class="name">WILLIE</div>
+        <img class="santa", src="images/santa.jpg" />        
+      </div>
+    
+      <div class="row2">
+      </div>
+      
+        <div class="deeds">
+          <div class="cardDeeds">
+          
+            <div class="title">
+                <p style="font-weight:bold">LOG YOUR DEED</p>
+                <p>Rate it and weight it:</p>
+            </div>
+            
+            <div class="normal-container">
+	            <div class="smile-rating-container">
+		            <div class="smile-rating-toggle-container">
+			            <form class="submit-rating">
+				            <input id="meh"  name="satisfaction" type="radio" /> 
+				            <input id="fun" name="satisfaction" type="radio" /> 
+				            <label for="meh" class="rating-label rating-label-naughty">NAUGHTY</label>
+				            <div class="smile-rating-toggle"></div>
+				            
+				            <div class="rating-eye rating-eye-left"></div>
+				            <div class="rating-eye rating-eye-right"></div>
+				            
+				            <div class="mouth rating-eye-bad-mouth"></div>
+				            
+				            <div class="toggle-rating-pill"></div>
+				            <label for="fun" class="rating-label rating-label-nice">NICE</label>
+			            </form>
+		            </div>
+	            </div>
+            </div>
+            
+            <div class="rating">
+              <div class="rate">1</div>
+              <div class="rate">2</div>
+              <div class="rate">3</div>                                           
+            </div>
+          
+            <span>
+              <form class="title" style="margin:0px;">
+                Describe your deed here:<br>
+                <textarea id="description" name="description" rows="5" cols="50"></textarea>
+              </form>
+            </span>
+            
+            <div class="submit">Submit</div>         
+                       
+          </div>
+        </div>
+        
+        <div class="chart">
+            <div class="bars">
+              <div class="naughtyBar">NAUGHTY</div>
+              <div class="niceBar">NICE</div>          
+            </div>
+        </div>        
+    
+      <div class="row3">
+        <div class="cardList">
+          <div class="title" style="font-weight:bold">LIST OF DEEDS</div>
+        </div>
+      </div>
+    
+    </div>
+       
+    <script src="js/main.js"></script> 
+    
+  </body>
+</html>
+
+
+
+
