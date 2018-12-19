@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Profile.css'
 
-import santa from '../../../images/santa.jpg';
+
 
 
 class Profile extends Component {
@@ -64,7 +64,7 @@ class Profile extends Component {
 
                 <div className="row1">
                     <div className="name">*placeholder*</div>
-                    <img className="santa" src = { santa } />
+                    
                 </div>
 
                 <div className="row2">
