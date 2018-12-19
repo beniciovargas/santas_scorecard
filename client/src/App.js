@@ -83,7 +83,6 @@ submit = () => {
       <div className="App">
         <nav className="App-navigation">
         </nav>
-
         <div className="App-mainContent">
           
             <Switch>
