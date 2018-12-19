@@ -4,16 +4,17 @@ import { Switch, Route } from 'react-router-dom';
 
 import UserSignup from './components/pages/UserSignup/UserSignup.js';
 import Profile from './components/pages/Profile/Profile.js';
-
+// add newDeeds in DB ****
 
 class App extends Component {
 //METHODS NEEDED:
 // createBars- this is populated by the refresh bars method
 // refreshBars- got the method already done for this
-// newDeeds 
-// get deeds and add them to bottom bar
-// checkbox values (either good or bad) - determines which bar
-// pt values to deeds
+// add newDeeds in DB ****  Beni will do
+// pt values to deeds- increment, find file with code ****
+// get deeds and add them to bottom bar render method ****
+// toggle button method, distinction of naughty or nice *****
+
 
 state = {
   email: '',
