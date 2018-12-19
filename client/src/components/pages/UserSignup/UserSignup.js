@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import './UserSignup.css'
+import './UserSignup.css';
+
+import santa from '../../../images/santa.jpg';
+import Modal from '../../Modal/Modal.js';
 
 class UserSignup extends Component {
     //METHODS NEEDED:
@@ -13,8 +16,7 @@ class UserSignup extends Component {
     state = {
         email: '',
         name: '',
-        deeds_desc: '',
-        show: false,
+        showingModal: false,
     }
 
     onChangeEmail = (ev) => {
@@ -35,11 +37,22 @@ class UserSignup extends Component {
         });
     }
 
+    showModal = () => {
+        this.setState({
+          showingModal: true,
+        });
+      }
+      
+      hideModal = () => {
+        this.setState({
+          showingModal: false,
+        });
+      }
+
     submit = () => {
         const formData = {
             name: this.state.name,
             email: this.state.email,
-            deeds_desc: this.state.text,
         };
 
         //Update code to make sure no empty data
@@ -62,50 +75,54 @@ class UserSignup extends Component {
 
     render() {
         return (
-            <div className="container">
-
-                <div className="row1">
-                    <div className="name">Welcome!</div>
-                    {/* <img className="santa" src={santa} /> */}
+            <div class="container2">
+                <div class="row1">
+                    <div class="name" style={{ marginleft: "250px"}}>SANTA'S SCORECARD</div>
+                <img class={santa} />
                 </div>
 
-                <div className="row2">
-                </div>
+                <div class="login">
+                    <form class="title">
+                        <p style={{ fontweight: "bold"}}>CREATE A USER ID</p>
+                    <p>Enter email</p>
+                    <input
+                        name="email"
+                        placeholder="Email"
+                        value={this.state.email}
+                        onChange={this.onChangeEmail}
+                        rows="1"
+                        cols="50"
+                    />
+                    <br />
 
-                <div className="deeds">
-                    <div className="card">
-                        <div className="form-container">
-                            <h4>Create an Elf Id!</h4>
-                            <input
-                                name="email"
-                                placeholder="Email"
-                                value={this.state.email}
-                                onChange={this.onChangeEmail}
-                            />
-                            <br />
-                            <input
-                                name="elf"
-                                placeholder="Elf Name"
-                                value={this.state.name}
-                                onChange={this.onChangeName}
-                            />
-                            <br /><br />
+                    <p>Enter user name</p>
+                    <input
+                        name="Username"
+                        placeholder="Username"
+                        value={this.state.name}
+                        onChange={this.onChangeName}
+                    />
+                    <br /><br />
 
-                            <button onClick={this.submit}>Submit</button>
-                            <br />
-                            <p>already signed up?</p>
-                            <button onClick={this.showModal}>
-                                go to profile </button>
-                        </div>
+                    <button class="submit2" onClick={this.submit}>Submit</button>
+
+                    <p style={{ fontweight: "bold"}}><br /><br />ALREADY SIGNED UP?</p>
+
+                    <button class="profile" onClick={this.showModal}>Go to profile</button>
+                    <div>
+                        {
+                            this.state.showModal ? (
+                                <Modal onDismiss={this.hideModal}>
+                                <p>Modal contents...</p>
+                                <p>More text</p>
+                                </Modal>
+                            ) : null
+                        }
                     </div>
+                 </form>
                 </div>
-
-
-
-                <div className="row3">
-
-                </div>
-            </div>
+            
+          </div>
 
 
 

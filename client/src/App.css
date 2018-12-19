@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Roboto');
 /* Body & container */
 
 * {
@@ -16,7 +18,7 @@ body {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 2fr 1fr;
 	padding: 15px;
-    background-image: linear-gradient(to top, #ff3300, #992600);
+    
 }
 
 
