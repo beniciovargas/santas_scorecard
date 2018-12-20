@@ -25,7 +25,7 @@ class Profile extends Component {
     state = {
         deeds_desc: '',
 
-    }
+    }   
 
     onChangeContent = (ev) => {
         this.setState({
@@ -64,26 +64,26 @@ class Profile extends Component {
 
                 <div className="row1">
                     <div className="name">*placeholder*</div>
-                    <img className="santa" src = { santa } />
+                    <img className="santa" src={santa} />
                 </div>
 
                 <div className="row2">
                 </div>
 
                 <div className="deeds">
-                    <div className="cardDeeds">
-
+                    <form className="cardDeeds" onSubmit={this.onSubmitDeed}>
+                        
                         <div className="title">
-                            <p style={{fontweight: "bold"}}>LOG YOUR DEED</p>
+                            <p style={{ fontweight: "bold" }}>LOG YOUR DEED</p>
                             <p>Rate it and weight it:</p>
                         </div>
 
                         <div className="normal-container">
                             <div className="smile-rating-container">
                                 <div className="smile-rating-toggle-container">
-                                    <form className="submit-rating">
-                                        <input id="meh" name="satisfaction" type="radio" />
-                                        <input id="fun" name="satisfaction" type="radio" />
+                                    <div className="submit-rating">
+                                        <input id="meh" name="satisfaction" type="radio" value="naughty" />
+                                        <input id="fun" name="satisfaction" type="radio" value="nice" />
                                         <label for="meh" className="rating-label rating-label-naughty">NAUGHTY</label>
                                         <div className="smile-rating-toggle"></div>
 
@@ -94,27 +94,42 @@ class Profile extends Component {
 
                                         <div className="toggle-rating-pill"></div>
                                         <label for="fun" className="rating-label rating-label-nice">NICE</label>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div className="rating">
-                            <div className="rate">1</div>
-                            <div className="rate">2</div>
-                            <div className="rate">3</div>
-                        </div>
+                        <label className="rate">
+                        1
+                            <input type="radio" name="rate" value="1" />
+                                 </label>
+
+
+                        <label className="rate">
+                            2
+                            <input type="radio" name="rate" value="2" />
+                            </label>
+
+
+                        <label className="rate">
+                            3
+                            <input type="radio" name="rate" value="3" />
+                                </label>
+
+                                </div>
+
 
                         <span>
-                            <form className="title" style={{margin:"0 px"}}>
+                            <div className="title" style={{ margin: "0 px" }}>
                                 Describe your deed here:<br />
                                 <textarea id="description" name="description" rows="5" cols="50"></textarea>
-                            </form>
+                            </div>
                         </span>
 
-                        <div className="submit">Submit</div>
+                        <button className="submit">Submit</button>
 
-                    </div>
+                    </form>
                 </div>
 
                 <div className="chart">
@@ -126,12 +141,12 @@ class Profile extends Component {
 
                 <div className="row3">
                     <div className="cardList">
-                        <div className="title" style={{fontweight:"bold"}}>LIST OF DEEDS</div>
+                        <div className="title" style={{ fontweight: "bold" }}>LIST OF DEEDS</div>
                     </div>
                 </div>
 
             </div>
-        
+
 
 
         );

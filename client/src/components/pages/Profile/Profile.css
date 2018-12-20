@@ -111,6 +111,10 @@ body {
   
 }
 
+.rate > input {
+  margin-top: 20px;
+}
+
 .rate:hover {
   background-color: #006622;
   color: white;

@@ -21,7 +21,7 @@ class DeedBar extends Component {
       }
 
       state={
-        deedList:[],
+        cardList:[],
       }
 
       updateBase = (ev) => {
@@ -31,13 +31,23 @@ class DeedBar extends Component {
         this.fetchDeeds(ev.target.value);
       }
 
+      state = {
+          count: 0, 
+      }
+
+      addDeed = () => {
+          this.setState({
+              count: this.state.count + 1,
+          });
+      }
+
   render() {
     return (
-        <div className="DeedBar">
-        <ul className="DeedBar">
+        <div className="naughtyBar">
+        <ul className="naughtyBar">
           {
             Object.keys(this.state.deedPosts).map(key => (
-             <li className="DeedBar" key={key} style={{height: ((this.state.deedPosts)) * 100}}>
+             <li className="naughtyBar" key={key} style={{height: ((this.state.deedPosts)) * 100}}>
               {this.state.deedPosts[key]}
               <br></br>
               {key}
@@ -46,16 +56,40 @@ class DeedBar extends Component {
           }
         </ul>
         
+        <div className="niceBar">
+        <ul className="niceBar">
+          {
+            Object.keys(this.state.deedPosts).map(key => (
+             <li className="niceBar" key={key} style={{height: ((this.state.deedPosts)) * 100}}>
+              {this.state.deedPosts[key]}
+              <br></br>
+              {key}
+             </li> 
+            ))
+          }
+        </ul>
+
         <select onChange={this.updateBase} value={this.state.base}>
               <option value="Naughty">Naughty</option>
               <option value="Nice">Nice</option>
         </select>
-        
-        <div className="deedList">
-          
+
+        <div className="naughtyBar">
+        <button onClick={this.addDeed}>
+            Submit{this.state.count}
+            </button>
+
+           
+        <div className="niceBar">
+        <button onClick={this.addDeed}>
+            Submit{this.state.count}
+            </button>
+
         </div>
-        
         </div>
+        </div>
+        </div>
+    
     );
   }
 }
