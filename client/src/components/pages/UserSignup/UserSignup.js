@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './UserSignup.css';
 
-
+import Button from '../../Button/Button.js';
 import Modal from '../../Modal/Modal.js';
 
 class UserSignup extends Component {
@@ -16,6 +16,7 @@ class UserSignup extends Component {
     state = {
         email: '',
         name: '',
+        deed_desc:'',
         showingModal: false,
     }
 
@@ -99,13 +100,13 @@ class UserSignup extends Component {
                             />
                             <br /><br />
                         <div>
-                            <button className="submit2" onClick={this.submit}>Submit</button>
+                            <Button type="login" onClick={this.submit}>Submit</Button>
                         </div>
                     </form>
                     <div>
                         <p style={{ fontweight: "bold"}}><br /><br />ALREADY SIGNED UP?</p>
                         <div>
-                            <button className="profile" onClick={this.showModal}>Go to profile</button>
+                            <Button type="profile" onClick={this.showModal}>Go to profile</Button>
                         </div>
                             
                             {
@@ -114,6 +115,7 @@ class UserSignup extends Component {
                                     <p>Please enter your email:</p>
                                     <input
                                         name="email"
+                                        // <Button type="modal" onClick={}>submit</Button>
                                     />
                                     </Modal>
                                 ) : null

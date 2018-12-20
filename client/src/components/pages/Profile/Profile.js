@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './Profile.css'
 
 
+import Button from '../../Button/Button.js';
+
 
 
 class Profile extends Component {
@@ -35,8 +37,6 @@ class Profile extends Component {
 
     submit = () => {
         const formData = {
-            name: this.state.name,
-            email: this.state.email,
             deeds_desc: this.state.text,
         };
 
@@ -112,7 +112,9 @@ class Profile extends Component {
                             </form>
                         </span>
 
-                        <div className="submit">Submit</div>
+                        <div>
+                            <Button type="login" onClick={this.submit}>Submit</Button>
+                        </div>
 
                     </div>
                 </div>
