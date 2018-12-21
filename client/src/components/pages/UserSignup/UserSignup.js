@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './UserSignup.css';
 
-import santa from '../../../images/santa.jpg';
+import Button from '../../Button/Button.js';
 import Modal from '../../Modal/Modal.js';
 
 class UserSignup extends Component {
@@ -31,19 +31,14 @@ class UserSignup extends Component {
         });
     }
 
-    onChangeContent = (ev) => {
-        this.setState({
-            deeds_desc: ev.target.value,
-        });
-    }
-
     showModal = () => {
+        console.log ("yay! im not broken!")
         this.setState({
           showingModal: true,
         });
       }
       
-      hideModal = () => {
+    hideModal = () => {
         this.setState({
           showingModal: false,
         });
@@ -75,51 +70,56 @@ class UserSignup extends Component {
 
     render() {
         return (
-            <div class="container2">
-                <div class="row1">
-                    <div class="name" style={{ marginleft: "250px"}}>SANTA'S SCORECARD</div>
-                <img class={santa} />
+            <div className="container2">
+                <div className="row1">
+                    <div className="name" style={{ marginleft: "250px"}}>SANTA'S SCORECARD</div>
+                                    
                 </div>
 
-                <div class="login">
-                    <form class="title">
+                <div className="login">
+                    <form className="title">
                         <p style={{ fontweight: "bold"}}>CREATE A USER ID</p>
-                    <p>Enter email</p>
-                    <input
-                        name="email"
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.onChangeEmail}
-                        rows="1"
-                        cols="50"
-                    />
-                    <br />
+                            <p>Enter email</p>
+                            <input
+                                name="email"
+                                placeholder="Email"
+                                value={this.state.email}
+                                onChange={this.onChangeEmail}
+                                rows="1"
+                                cols="50"
+                            />
+                            <br />
 
-                    <p>Enter user name</p>
-                    <input
-                        name="Username"
-                        placeholder="Username"
-                        value={this.state.name}
-                        onChange={this.onChangeName}
-                    />
-                    <br /><br />
-
-                    <button class="submit2" onClick={this.submit}>Submit</button>
-
-                    <p style={{ fontweight: "bold"}}><br /><br />ALREADY SIGNED UP?</p>
-
-                    <button class="profile" onClick={this.showModal}>Go to profile</button>
+                            <p>Enter user name</p>
+                            <input
+                                name="Username"
+                                placeholder="Username"
+                                value={this.state.name}
+                                onChange={this.onChangeName}
+                            />
+                            <br /><br />
+                        <div>
+                            <Button type="login" onClick={this.submit}>Submit</Button>
+                        </div>
+                    </form>
                     <div>
-                        {
-                            this.state.showModal ? (
-                                <Modal onDismiss={this.hideModal}>
-                                <p>Modal contents...</p>
-                                <p>More text</p>
-                                </Modal>
-                            ) : null
-                        }
+                        <p style={{ fontweight: "bold"}}><br /><br />ALREADY SIGNED UP?</p>
+                        <div>
+                            <Button type="profile" onClick={this.showModal}>Go to profile</Button>
+                        </div>
+                            
+                            {
+                                this.state.showingModal ? (
+                                    <Modal onDismiss={this.hideModal}>
+                                    <p>Please enter your email:</p>
+                                    <input
+                                        name="email"
+                                        // <Button type="modal" onClick={}>submit</Button>
+                                    />
+                                    </Modal>
+                                ) : null
+                            }
                     </div>
-                 </form>
                 </div>
             
           </div>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Profile.css'
 
+
+import Button from '../../Button/Button.js';
 import santa from '../../../images/santa.jpg';
 
 
@@ -35,8 +37,6 @@ class Profile extends Component {
 
     submit = () => {
         const formData = {
-            name: this.state.name,
-            email: this.state.email,
             deeds_desc: this.state.text,
         };
 
@@ -64,7 +64,7 @@ class Profile extends Component {
 
                 <div className="row1">
                     <div className="name">*placeholder*</div>
-                    <img className="santa" src={santa} />
+                   
                 </div>
 
                 <div className="row2">
@@ -127,7 +127,9 @@ class Profile extends Component {
                             </div>
                         </span>
 
-                        <button className="submit">Submit</button>
+                        <div>
+                            <Button type="login" onClick={this.submit}>Submit</Button>
+                        </div>
 
                     </form>
                 </div>
