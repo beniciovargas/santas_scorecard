@@ -3,7 +3,6 @@ import './Profile.css'
 
 
 import Button from '../../Button/Button.js';
-import santa from '../../../images/santa.jpg';
 
 
 class Profile extends Component {
@@ -25,24 +24,43 @@ class Profile extends Component {
     //reactify Errin's
 
     state = {
-        deeds_desc: '',
-
+        deedData: {
+            description:'',
+            rate: '',
+            behavior: '',
+        }
     }   
+
+    componentDidMount() {
+        console.log("I am working!");
+        const encodedEmail = encodeURI(this.props.match.params.email);
+        fetch('/api/user/find?email=' + encodedEmail)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({
+                    data: data,
+                });
+            });
+    }
 
     onChangeContent = (ev) => {
         this.setState({
-            deeds_desc: ev.target.value,
+            deedData: ev.target.value,
         });
     }
 
+
     submit = () => {
         const formData = {
-            deeds_desc: this.state.text,
+        
+            rate: Number(this.state.rate),
+            description: this.state.text,
+            behavior: this.state.behavior,
+            email: this.props.match.params.email,
         };
 
-        //Update code to make sure no empty data
 
-        fetch('/api/mongodb/santas_test/', {
+        fetch('/api/user/deed-push', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
@@ -50,20 +68,15 @@ class Profile extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log('Got this back', data);
-
-
-                // Redirect to blog
-                // this.props.history.push('deed-list');
             });
     }
-
 
     render() {
         return (
             <div className="container1">
 
                 <div className="row1">
-                    <div className="name">*placeholder*</div>
+                    <div className="name">{this.props.match.params.email}</div>
                    
                 </div>
 

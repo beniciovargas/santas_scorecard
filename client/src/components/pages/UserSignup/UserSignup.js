@@ -5,13 +5,6 @@ import Button from '../../Button/Button.js';
 import Modal from '../../Modal/Modal.js';
 
 class UserSignup extends Component {
-    //METHODS NEEDED:
-    // createBars
-    // refreshBars
-    // newDeeds 
-    // get deeds and add them to bottom bar
-    // checkbox values (either good or bad) - determines which bar
-    // pt values to deeds
 
     state = {
         email: '',
@@ -30,29 +23,14 @@ class UserSignup extends Component {
             name: ev.target.value,
         });
     }
-
-    showModal = () => {
-        console.log ("yay! im not broken!")
-        this.setState({
-          showingModal: true,
-        });
-      }
-      
-    hideModal = () => {
-        this.setState({
-          showingModal: false,
-        });
-      }
-
+    
     submit = () => {
         const formData = {
             name: this.state.name,
             email: this.state.email,
         };
 
-        //Update code to make sure no empty data
-
-        fetch('/api/mongodb/santas_test/', {
+        fetch('/api/user/create/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
@@ -60,15 +38,28 @@ class UserSignup extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log('Got this back', data);
-
-
-                // Redirect to blog
-                // this.props.history.push('deed-list');
             });
     }
 
+    showModal = () => {
+        console.log ("yay! im not broken!")
+        this.setState({
+          showingModal: true,
+        });
+    }
+      
+    hideModal = () => {
+        this.setState({
+          showingModal: false,
+        });
+    }
 
-    render() {
+    findUser = () => {
+            this.props.history.push('profile/' + this.state.email);
+ 
+    }
+
+    render(){
         return (
             <div className="container2">
                 <div className="row1">
@@ -113,9 +104,9 @@ class UserSignup extends Component {
                                     <Modal onDismiss={this.hideModal}>
                                     <p>Please enter your email:</p>
                                     <input
-                                        name="email"
-                                        // <Button type="modal" onClick={}>submit</Button>
-                                    />
+                                        name="email"/>
+                                        <Button type="modal" onClick={this.findUser}>Submit</Button>
+                                    
                                     </Modal>
                                 ) : null
                             }
