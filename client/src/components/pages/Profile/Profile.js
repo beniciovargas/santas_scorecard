@@ -172,7 +172,7 @@ class Profile extends Component {
                     <div className="cardList">
                         <div className="title" style={{ fontweight: "bold" }}>LIST OF DEEDS</div>
                         {this.state.postedDeeds.map(deed => {
-                            <div>
+                            return <div>
                             <div>{deed.description}</div>
                             <div>{deed.rate}</div>
                             <div>{deed.behavior}</div>
