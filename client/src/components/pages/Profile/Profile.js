@@ -28,7 +28,8 @@ class Profile extends Component {
             description:'',
             rate: '',
             behavior: '',
-        }
+        },
+        postedDeeds: []
     }   
 
     componentDidMount() {
@@ -68,6 +69,9 @@ class Profile extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log('Got this back', data);
+                this.setState({
+                    postedDeeds: this.state.postedDeeds.push(this.state.deedData)
+                })
             });
 
         let deedData = {
@@ -167,10 +171,17 @@ class Profile extends Component {
                 <div className="row3">
                     <div className="cardList">
                         <div className="title" style={{ fontweight: "bold" }}>LIST OF DEEDS</div>
+                        {this.state.postedDeeds.map(deed => {
+                            <div>
+                            <div>{deed.description}</div>
+                            <div>{deed.rate}</div>
+                            <div>{deed.behavior}</div>
+                            </div>
+                        })}
+                        </div>
                     </div>
                 </div>
-
-            </div>
+            
 
 
 
