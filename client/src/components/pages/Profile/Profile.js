@@ -69,6 +69,16 @@ class Profile extends Component {
             .then(data => {
                 console.log('Got this back', data);
             });
+
+        let deedData = {
+            description: [],
+            behavior: [],
+            rate:[],
+        }
+
+        for (deedData in deedData) {
+            console.log(deedData);
+        }
     }
 
     render() {
@@ -167,5 +177,4 @@ class Profile extends Component {
         );
     }
 }
-
 export default Profile;
