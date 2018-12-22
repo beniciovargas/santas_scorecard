@@ -91,7 +91,7 @@ class Profile extends Component {
             <div className="container1">
 
                 <div className="row1">
-                    <div className="name"style={{ marginLeft: "325px"}}>{this.props.match.params.email}</div>
+                    <div className="name"style={{ marginLeft: "325px"}}>Krampus</div>
                    
                 </div>
 
@@ -172,6 +172,14 @@ class Profile extends Component {
                 <div className="row3">
                     <div className="cardList">
                         <div className="title" style={{ fontweight: "bold" }}>LIST OF DEEDS</div>
+                        <ul>
+                            <li>Took out trash</li>
+                            <li>Cleaned room</li>
+                            <li>Washed the dishes</li>
+                            <li>Fed the dog</li>
+                            <li>Spit on his sister</li>
+                            <li>Drank some beer from dad's cup</li>
+                        </ul>
                         {this.state.postedDeeds.map(deed => {
                             return <div>
                             <div>{deed.description}</div>
