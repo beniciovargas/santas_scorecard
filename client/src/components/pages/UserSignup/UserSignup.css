@@ -15,6 +15,7 @@ body {
   color: black;
   margin-left: auto;
   margin-right: auto;
+  background-image: url("../../../images/wallpaper66.jpg");
 }
 
 .container1 {
@@ -41,7 +42,7 @@ body {
     font-size: 3rem;
     float: left;
     margin-top: 80px;
-    margin-left: 450px;    
+    margin-left: 300px;    
     background: beige;
     border: 3px solid #006622;
     color: #b30000;
@@ -208,10 +209,10 @@ body {
 
 .container2 {
 	display: grid;
-  grid-template-columns: 1;
+  grid-template-columns: 1fr;
 	grid-template-rows: 1fr 2fr 1fr;
-    padding: 15px;
-    background-image: url("../../../images/wallpaper66.jpg");
+  padding: 15px;
+
 
 }
 

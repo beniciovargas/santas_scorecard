@@ -90,7 +90,7 @@ class Profile extends Component {
             <div className="container1">
 
                 <div className="row1">
-                    <div className="name">{this.props.match.params.email}</div>
+                    <div className="name"style={{ marginLeft: "325px"}}>{this.props.match.params.email}</div>
                    
                 </div>
 
@@ -100,8 +100,8 @@ class Profile extends Component {
                 <div className="deeds">
                     <form className="cardDeeds" onSubmit={this.onSubmitDeed}>
                         
-                        <div className="title">
-                            <p style={{ fontweight: "bold" }}>LOG YOUR DEED</p>
+                        <div className="title" >
+                            <p style={{ fontWeight: "bold" }}>LOG YOUR DEED</p>
                             <p>Rate it and weight it:</p>
                         </div>
 
@@ -155,7 +155,7 @@ class Profile extends Component {
                         </span>
 
                         <div>
-                            <Button type="login" onClick={this.submit}>Submit</Button>
+                            <Button type="deeds" onClick={this.submit}>Submit</Button>
                         </div>
 
                     </form>

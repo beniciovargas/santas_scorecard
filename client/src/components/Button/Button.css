@@ -3,8 +3,9 @@
     border-radius: 300px;
     margin-top: 0px;
     margin-bottom: 15px;
+    margin-left: -5px;
     padding: 15px;
-    padding-bottom: 0px; 
+    padding-bottom: 10px; 
   }
   
 .Button--deeds:hover {
@@ -18,7 +19,7 @@
     border-radius: 300px;
     margin-top: 30px;
     margin-bottom: 15px;
-    margin-left: 175px;
+    margin-left: 250px;
     padding: 15px;
     width: 125px;
     align-items: center;
@@ -35,7 +36,7 @@
     border-radius: 300px;
     margin-top: 30px;
     margin-bottom: 15px;
-    margin-left: 155px;
+    margin-left: 225px;
     padding: 15px;
     width: 170px;
     align-items: center;

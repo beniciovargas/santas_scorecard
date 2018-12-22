@@ -42,7 +42,7 @@ body {
     font-size: 3rem;
     float: left;
     margin-top: 80px;
-    margin-left: 450px;    
+    margin-left: 325px;    
     background: beige;
     border: 3px solid #006622;
     color: #b30000;
@@ -275,6 +275,7 @@ body {
   width: 75%;
   top: 450px;
   right: 560px;
+  margin-top: 0px;
 }
 
 .smile-rating-container {
@@ -291,6 +292,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 10px;
 }
 
 .rating-label {

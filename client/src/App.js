@@ -4,7 +4,8 @@ import { Switch, Route } from 'react-router-dom';
 
 import UserSignup from './components/pages/UserSignup/UserSignup.js';
 import Profile from './components/pages/Profile/Profile.js';
-// add newDeeds in DB ****
+
+import santa from './images/santa.jpg';
 
 class App extends Component {
 
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="App">
         <nav className="App-navigation">
         </nav>
+        <img className="santa" src={santa}></img>
         <div className="App-mainContent">
           
             <Switch>

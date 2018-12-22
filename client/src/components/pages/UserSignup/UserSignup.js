@@ -63,13 +63,13 @@ class UserSignup extends Component {
         return (
             <div className="container2">
                 <div className="row1">
-                    <div className="name" style={{ marginleft: "250px"}}>SANTA'S SCORECARD</div>
+                    <div className="name" style={{ marginLeft: "325px"}}>SANTA'S SCORECARD</div>
                                     
                 </div>
 
                 <div className="login">
                     <form className="title">
-                        <p style={{ fontweight: "bold"}}>CREATE A USER ID</p>
+                        <p style={{ fontWeight: "bold"}}>CREATE A USER ID</p>
                             <p>Enter email</p>
                             <input
                                 name="email"
@@ -90,10 +90,9 @@ class UserSignup extends Component {
                             />
                             <br /><br />
                         <div>
-                            <Button type="login" onClick={this.submit}>Submit</Button>
+                            <Button type="login"  onClick={this.submit}>Submit</Button>
                         </div>
-                    </form>
-                    <div>
+                    
                         <p style={{ fontweight: "bold"}}><br /><br />ALREADY SIGNED UP?</p>
                         <div>
                             <Button type="profile" onClick={this.showModal}>Go to profile</Button>
@@ -104,13 +103,15 @@ class UserSignup extends Component {
                                     <Modal onDismiss={this.hideModal}>
                                     <p>Please enter your email:</p>
                                     <input
+                                        onChange={this.onChangeEmail}
+                                        value={this.state.email}
                                         name="email"/>
                                         <Button type="modal" onClick={this.findUser}>Submit</Button>
                                     
                                     </Modal>
                                 ) : null
                             }
-                    </div>
+                    </form>
                 </div>
             
           </div>
