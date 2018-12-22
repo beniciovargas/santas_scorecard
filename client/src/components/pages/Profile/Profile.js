@@ -69,9 +69,7 @@ class Profile extends Component {
             .then(response => response.json())
             .then(data => {
                 console.log('Got this back', data);
-                console.log("this.state.deedData", this.state.deedData)
                 this.state.postedDeeds.push(this.state.deedData)
-                console.log("this.state.postedDeeds", this.state.postedDeeds)
                 this.setState({
                     postedDeeds: this.state.postedDeeds
                 })
@@ -89,7 +87,6 @@ class Profile extends Component {
     }
 
     render() {
-        console.log("IN RENDER this.state.postedDeeds", this.state.postedDeeds)
         return (
             <div className="container1">
 
