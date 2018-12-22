@@ -92,8 +92,7 @@ class UserSignup extends Component {
                         <div>
                             <Button type="login" onClick={this.submit}>Submit</Button>
                         </div>
-                    </form>
-                    <div>
+                    
                         <p style={{ fontweight: "bold"}}><br /><br />ALREADY SIGNED UP?</p>
                         <div>
                             <Button type="profile" onClick={this.showModal}>Go to profile</Button>
@@ -110,7 +109,7 @@ class UserSignup extends Component {
                                     </Modal>
                                 ) : null
                             }
-                    </div>
+                    </form>
                 </div>
             
           </div>
