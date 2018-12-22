@@ -46,25 +46,26 @@ app.get('/api/some/example/with/mongodb/', (request, response) => {
 //
 // Totally insecure backend routes, good for rapid prototyping
 // DELETE before use in a real application
-app.get('/api/mongodb/santas_test/', (request, response) => {
-  const collectionName = request.params.collectionName;
+app.get('/api/user/find', (request, response) => {
 
   // Get GET params
-  const query = request.query || {};
-  db.collection(collectionName)
+  const query = {
+    email: request.query.email,
+  };
+  db.collection("santas_test")
     .find(query)
     .toArray((err, results) => {
       // Got data back.. send to client
       if (err) throw err;
-      response.json(results);
+      response.json(results[0]);
     });
 });
 
-app.post('/api/mongodb/:collectionName/', (request, response) => {
-  const collectionName = request.params.collectionName;
+// User creation route
+app.post('/api/user/create/', (request, response) => {
   const data = request.body;
 
-  db.collection(collectionName)
+  db.collection("santas_test")
     .insert(data, (err, results) => {
       // Got data back.. send to client
       if (err) throw err;
@@ -75,6 +76,43 @@ app.post('/api/mongodb/:collectionName/', (request, response) => {
       });
     });
 });
+
+
+
+// User creation route
+app.post('/api/user/deed-push/', (request, response) => {
+  const data = request.body;
+  //const {email, description, rate, behavior} = data;
+  const email = data.email;
+  const description = data.description;
+  const rate = data.rate;
+  const behavior = data.behavior;
+  const deedData = {
+    description: description,
+    rate: rate,
+    behavior: behavior,
+  };
+
+  //const deedData = {description, rate, behavior};
+
+  const query = {
+    email: email,
+  };
+
+  //const query = {email};
+
+  db.collection("santas_test")
+    .update(query, {$push: {deed: deedData}}, (err, results) => {
+      // Got data back.. send to client
+      if (err) throw err;
+
+      response.json({
+        'success': true,
+        'results': results,
+      });
+    });
+});
+
 
 
 // PUT endpoint for modifying an existing item
