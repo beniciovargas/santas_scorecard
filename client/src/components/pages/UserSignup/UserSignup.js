@@ -103,6 +103,8 @@ class UserSignup extends Component {
                                     <Modal onDismiss={this.hideModal}>
                                     <p>Please enter your email:</p>
                                     <input
+                                        onChange={this.onChangeEmail}
+                                        value={this.state.email}
                                         name="email"/>
                                         <Button type="modal" onClick={this.findUser}>Submit</Button>
                                     
